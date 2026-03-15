@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Haneef Portfolio</title>
+
+<link rel="stylesheet" href="style.css">
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+html{
+scroll-behavior:smooth;
+}
+@media(max-width:768px){
+
+.hero{
+flex-direction:column;
+text-align:center;
+}
+
+.hero-image img{
+margin-top:30px;
+width:200px;
+}
+
+.nav-links{
+display:none;
+}
+
+}
+body{
+font-family:'Poppins',sans-serif;
+background:#0A192F;
+color:#E6F1FF;
+}
+body {
+  cursor: none;
+}
+
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #64FFDA;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease-out;
+  z-index: 9999;
+}
+.navbar{
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 10%;
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(10px);
+border-bottom:1px solid rgba(255,255,255,0.1);
+}
+.logo{
+font-size:22px;
+font-weight:600;
+color:#64FFDA;
+cursor:pointer;
+}
+.nav-links{
+list-style:none;
+display:flex;
+gap:30px;
+}
+
+.nav-links a{
+text-decoration:none;
+color:#E6F1FF;
+font-size:16px;
+transition:0.3s;
+}
+.nav-links a:hover{
+color:#64FFDA;
+}
+.nav-links a{
+position:relative;
+}
+
+.nav-links a::after{
+content:"";
+position:absolute;
+width:0;
+height:2px;
+background:#64FFDA;
+left:0;
+bottom:-5px;
+transition:0.3s;
+}
+
+.nav-links a:hover::after{
+width:100%;
+}
+.nav-links a{
+position:relative;
+}
+
+.nav-links a::after{
+content:"";
+position:absolute;
+width:0;
+height:2px;
+background:#64FFDA;
+left:0;
+bottom:-5px;
+transition:0.3s;
+}
+
+.nav-links a:hover::after{
+width:100%;
+}
+body{
+padding-top:80px;
+}
+.hero{
+display:flex;
+align-items:center;
+justify-content:space-between;
+min-height:90vh;
+padding:0 10%;
+}
+.hero-text h1{
+font-size:48px;
+margin-bottom:10px;
+}
+
+.hero-text h2{
+font-size:28px;
+color:#64FFDA;
+margin-bottom:20px;
+}
+
+.hero-text p{
+max-width:500px;
+color:#8892B0;
+line-height:1.6;
+margin-bottom:30px;
+}
+.hero-buttons{
+display:flex;
+gap:20px;
+}
+.btn-primary{
+padding:12px 28px;
+background:#64FFDA;
+color:#0A192F;
+text-decoration:none;
+border-radius:6px;
+font-weight:500;
+transition:0.3s;
+}
+.btn-primary:hover{
+transform:translateY(-3px);
+box-shadow:0 10px 20px rgba(0,0,0,0.3);
+}
+.btn-secondary{
+padding:12px 28px;
+border:1px solid #64FFDA;
+color:#64FFDA;
+text-decoration:none;
+border-radius:6px;
+transition:0.3s;
+}
+.btn-secondary:hover{
+background:#64FFDA;
+color:#0A192F;
+}
+.hero-image img{
+width:300px;
+border-radius:50%;
+border:3px solid rgba(255,255,255,0.1);
+}
+.hero-image img{
+animation:float 4s ease-in-out infinite;
+}
+@keyframes float{
+
+0%{
+transform:translateY(0px);
+}
+
+50%{
+transform:translateY(-15px);
+}
+
+100%{
+transform:translateY(0px);
+}
+
+}
+section{
+padding:100px 10%;
+}
+.section-title{
+font-size:36px;
+margin-bottom:40px;
+color:#E6F1FF;
+position:relative;
+display:inline-block;
+}
+.section-title::after{
+content:"";
+width:60px;
+height:3px;
+background:#64FFDA;
+position:absolute;
+left:0;
+bottom:-10px;
+}
+.about-container{
+display:flex;
+justify-content:center;
+}
+.about-card{
+max-width:700px;
+padding:40px;
+background:rgba(255,255,255,0.05);
+border:1px solid rgba(255,255,255,0.1);
+backdrop-filter:blur(10px);
+border-radius:12px;
+line-height:1.7;
+color:#8892B0;
+transition:0.3s;
+}
+.about-card:hover{
+transform:translateY(-8px);
+box-shadow:0 15px 30px rgba(0,0,0,0.3);
+}
+.about{
+animation:fadeIn 1.5s ease;
+}
+.skills-container{
+display:grid;
+grid-template-columns:repeat(auto-fit, minmax(150px, 1fr));
+gap:25px;
+margin-top:40px;
+}
+.skill-card{
+padding:30px;
+text-align:center;
+background:rgba(255,255,255,0.05);
+border:1px solid rgba(255,255,255,0.1);
+border-radius:10px;
+backdrop-filter:blur(10px);
+font-weight:500;
+color:#E6F1FF;
+transition:0.3s;
+cursor:pointer;
+}
+.skill-card:hover{
+transform:translateY(-8px);
+border-color:#64FFDA;
+box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+.skill-card{
+animation:fadeIn 1.5s ease;
+}
+.projects-container{
+display:grid;
+grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
+gap:30px;
+margin-top:40px;
+}
+.project-card{
+background:rgba(255,255,255,0.05);
+border:1px solid rgba(255,255,255,0.1);
+border-radius:12px;
+backdrop-filter:blur(10px);
+padding:20px;
+transition:0.3s;
+}
+.project-card img{
+width:100%;
+border-radius:10px;
+margin-bottom:15px;
+}
+.project-card h3{
+margin-bottom:10px;
+color:#E6F1FF;
+}
+
+.project-card p{
+color:#8892B0;
+margin-bottom:15px;
+}
+.project-btn{
+text-decoration:none;
+color:#64FFDA;
+border:1px solid #64FFDA;
+padding:8px 18px;
+border-radius:6px;
+transition:0.3s;
+}
+.project-btn:hover{
+background:#64FFDA;
+color:#0A192F;
+}
+.project-card:hover{
+transform:translateY(-10px);
+box-shadow:0 20px 40px rgba(0,0,0,0.3);
+}
+.contact-container{
+display:flex;
+justify-content:center;
+margin-top:40px;
+}
+.contact-form{
+width:100%;
+max-width:500px;
+display:flex;
+flex-direction:column;
+gap:20px;
+padding:40px;
+
+background:rgba(255,255,255,0.05);
+border:1px solid rgba(255,255,255,0.1);
+border-radius:12px;
+backdrop-filter:blur(10px);
+}
+.contact-form input,
+.contact-form textarea{
+
+padding:12px;
+border:none;
+outline:none;
+
+background:rgba(255,255,255,0.07);
+border-radius:6px;
+
+color:#E6F1FF;
+font-family:'Poppins', sans-serif;
+}
+.contact-form input:focus,
+.contact-form textarea:focus{
+
+border:1px solid #64FFDA;
+
+}
+.contact-form button{
+
+padding:12px;
+border:none;
+
+background:#64FFDA;
+color:#0A192F;
+
+font-weight:500;
+border-radius:6px;
+cursor:pointer;
+
+transition:0.3s;
+
+}
+.contact-form button:hover{
+
+transform:translateY(-3px);
+box-shadow:0 10px 20px rgba(0,0,0,0.3);
+
+}
+.footer{
+
+margin-top:100px;
+padding:30px 10%;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+border-top:1px solid rgba(255,255,255,0.1);
+
+color:#8892B0;
+
+}
+.social-links{
+
+display:flex;
+gap:20px;
+
+}
+
+.social-links a{
+
+text-decoration:none;
+color:#8892B0;
+transition:0.3s;
+
+}
+.social-links a:hover{
+
+color:#64FFDA;
+
+}
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease-out;
+}
+
+.fade-in.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+.hamburger {
+  display:none;
+  flex-direction: column;
+  cursor: pointer;
+  gap:5px;
+}
+
+.hamburger div {
+  width:25px;
+  height:3px;
+  background:#64FFDA;
+  border-radius:2px;
+}
+
+@media(max-width:768px){
+  .nav-links {
+    display:none;
+    position:absolute;
+    top:80px;
+    left:0;
+    width:100%;
+    background:#0A192F;
+    flex-direction: column;
+    align-items:center;
+    gap:20px;
+    padding:20px 0;
+  }
+
+  .nav-links.active {
+    display:flex;
+  }
+
+  .hamburger {
+    display:flex;
+  }
+}
+.skill-bar{
+  width:100%;
+  height:6px;
+  background:rgba(255,255,255,0.1);
+  border-radius:3px;
+  margin-top:8px;
+}
+
+.skill-fill{
+  height:100%;
+  background:#64FFDA;
+  border-radius:3px;
+  transition: width 1s ease-in-out;
+}
+.hero::before {
+  content:"";
+  position:absolute;
+  top:0; left:0;
+  width:100%; height:100%;
+  background:repeating-linear-gradient(
+    45deg,
+    rgba(100,255,218,0.05) 0,
+    rgba(100,255,218,0.05) 1px,
+    transparent 1px,
+    transparent 20px
+  );
+  pointer-events:none;
+  z-index:0;
+}
+.hero{
+  position:relative;
+  z-index:1;
+}
+</style>
+</head>
+
+<body>
+
+<nav class="navbar">
+
+<div class="logo">
+Haneef.
+</div>
+
+<ul class="nav-links">
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+<div class="hamburger">
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+</nav>
+<section id="home" class="hero">
+
+<div class="hero-text">
+
+<h1>Hi, I'm Haneef</h1>
+
+<h2>Frontend Developer</h2>
+
+<p>
+I build modern websites and explore UI/UX design while creating smooth digital experiences.
+</p>
+
+<div class="hero-buttons">
+
+<a href="#" class="btn-primary">View Projects</a>
+
+<a href="#" class="btn-secondary">Contact Me</a>
+
+</div>
+
+</div>
+
+
+<div class="hero-image">
+
+<img src="images/logo.png" alt="Haneef">
+
+</div>
+
+</section>
+<section id="about" class="about">
+
+<h2 class="section-title">About Me</h2>
+
+<div class="about-container">
+
+<div class="about-card">
+
+<p>
+I'm Haneef, a passionate frontend developer who enjoys building
+clean interfaces and smooth user experiences.
+I focus on HTML, CSS, and JavaScript while learning UI/UX design
+to create modern and engaging websites.
+</p>
+
+<p>
+Currently, I'm building projects and improving my skills in
+web development and design.
+</p>
+
+</div>
+
+</div>
+
+</section>
+<section id="skills" class="skills">
+
+<h2 class="section-title">Skills</h2>
+
+<div class="skills-container">
+
+<div class="skill-card">HTML</div>
+<div class="skill-card">CSS</div>
+<div class="skill-card">JavaScript</div>
+<div class="skill-card">UI/UX</div>
+<div class="skill-card">Responsive Design</div>
+<div class="skill-card">Git</div>
+
+</div>
+<div class="skill-card fade-in">
+  <p>HTML</p>
+  <div class="skill-bar">
+    <div class="skill-fill" style="width:90%"></div>
+  </div>
+</div>
+</section>
+<section id="projects" class="projects">
+
+<h2 class="section-title">Projects</h2>
+
+<div class="projects-container">
+
+<div class="project-card">
+
+<img src="images/avataaars.png" alt="Project">
+
+<h3>Portfolio Website</h3>
+
+<p>Personal portfolio built using HTML, CSS and JavaScript.</p>
+
+<a href="INDEX.HTML" class="project-btn">View Project</a>
+
+</div>
+
+
+<div class="project-card">
+
+<img src="images/project2.jpg" alt="Project">
+
+<h3>To-Do App</h3>
+
+<p>A simple task manager with JavaScript functionality.</p>
+
+<a href="todo.html" class="project-btn">View Project</a>
+
+</div>
+
+
+<div class="project-card">
+
+<img src="images/project3.jpg" alt="Project">
+
+<h3>Quote Generator</h3>
+
+<p>A motivational quote generator using JavaScript.</p>
+
+<a href="quote.html" class="project-btn">View Project</a>
+</div>
+
+</div>
+
+</section>
+<section id="contact" class="contact">
+
+<h2 class="section-title">Contact Me</h2>
+
+<div class="contact-container">
+
+<form class="contact-form">
+
+<input type="text" placeholder="Your Name" required>
+
+<input type="email" placeholder="Your Email" required>
+
+<textarea placeholder="Your Message" rows="5" required></textarea>
+
+<button type="submit">Send Message</button>
+
+</form>
+
+</div>
+
+</section>
+<footer class="footer">
+
+<p>© 2026 Haneef. All rights reserved.</p>
+
+<div class="social-links">
+
+<a href="#">GitHub</a>
+<a href="#">LinkedIn</a>
+<a href="#">YouTube</a>
+
+</div>
+
+</footer>
+<div class="cursor"></div>
+<script>
+const cursor = document.querySelector('.cursor');
+
+document.addEventListener('mousemove', e => {
+  cursor.style.left = e.clientX + 'px';
+  cursor.style.top = e.clientY + 'px';
+});
+
+  const faders = document.querySelectorAll('.fade-in');
+
+const appearOptions = {
+  threshold: 0.1,
+  rootMargin: "0px 0px -50px 0px"
+};
+
+const appearOnScroll = new IntersectionObserver(function(entries, observer){
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    entry.target.classList.add('active');
+    observer.unobserve(entry.target);
+  });
+}, appearOptions);
+
+faders.forEach(fader => {
+  appearOnScroll.observe(fader);
+});
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
+
+hamburger.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+});
+</script>
+
+</body>
+</html>
